@@ -36,7 +36,7 @@ docker run \
      && git clone https://github.com/msteveb/jimtcl \
      && cd jimtcl/ \
      && ./configure --full --with-ext=sqlite3 \
-     && env LIBS=-static make \
+     && env LDLIBS=-static make \
      && cp jimsh \
           "/inbox/jimsh-$(./jimsh --version)-$(git rev-parse HEAD \
                                                | cut -c 1-10)-$0"
