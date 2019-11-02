@@ -34,7 +34,7 @@ mkdir -p inbox/
 docker run \
     --rm \
     --volume "$(pwd)/inbox:/inbox" \
-    "$arch/alpine:3.8" \
+    "$arch/alpine:3.10" \
     sh -c \
     'cd \
      && apk update \
