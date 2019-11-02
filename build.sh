@@ -39,9 +39,9 @@ docker run \
     'cd \
      && apk update \
      && apk add gcc git make libc-dev tcl zlib-dev \
-     && wget https://sqlite.org/2018/sqlite-autoconf-3240000.tar.gz \
-     && tar xvf sqlite-autoconf-3240000.tar.gz \
-     && cd sqlite-autoconf-3240000/ \
+     && wget https://sqlite.org/2019/sqlite-autoconf-3300100.tar.gz \
+     && tar xvf sqlite-autoconf-3300100.tar.gz \
+     && cd sqlite-autoconf-3300100/ \
      && env CFLAGS="-DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1" ./configure \
      && make install \
      && cd \
