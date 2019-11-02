@@ -38,7 +38,7 @@ docker run \
     sh -c \
     'cd \
      && apk update \
-     && apk add gcc git make libc-dev tcl \
+     && apk add gcc git make libc-dev tcl zlib-dev \
      && wget https://sqlite.org/2018/sqlite-autoconf-3240000.tar.gz \
      && tar xvf sqlite-autoconf-3240000.tar.gz \
      && cd sqlite-autoconf-3240000/ \
