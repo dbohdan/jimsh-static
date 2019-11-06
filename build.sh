@@ -48,7 +48,7 @@ docker run \
      && git clone https://github.com/msteveb/jimtcl \
      && cd jimtcl/ \
      && git checkout "$1" \
-     && ./configure --full --with-ext=sqlite3 \
+     && ./configure --full --ipv6 --math --with-ext=sqlite3 \
      && env LDLIBS=-static make \
      && cp jimsh \
           "/inbox/jimsh-$(./jimsh --version)-$(git rev-parse HEAD \
