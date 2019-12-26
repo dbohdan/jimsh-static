@@ -73,6 +73,7 @@ docker run \
      && git checkout "$1" \
      && ./configure --full --ipv6 --math --ssl --with-ext=sqlite3 \
      && env LDLIBS=-static make \
+     && make test \
      && cp jimsh \
           "/inbox/jimsh-$(./jimsh --version)-$(git rev-parse HEAD \
                                                | cut -c 1-10)-$0"
