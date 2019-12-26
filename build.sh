@@ -42,7 +42,30 @@ docker run \
      && wget https://sqlite.org/2019/sqlite-autoconf-3300100.tar.gz \
      && tar xvf sqlite-autoconf-3300100.tar.gz \
      && cd sqlite-autoconf-3300100/ \
-     && env CFLAGS="-DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1" ./configure \
+     && env CFLAGS="-DSQLITE_ENABLE_COLUMN_METADATA \
+                    -DSQLITE_ENABLE_DBSTAT_VTAB \
+                    -DSQLITE_ENABLE_EXPLAIN_COMMENTS \
+                    -DSQLITE_ENABLE_FTS3 \
+                    -DSQLITE_ENABLE_FTS3_PARENTHESIS \
+                    -DSQLITE_ENABLE_FTS3_TOKENIZER \
+                    -DSQLITE_ENABLE_FTS4 \
+                    -DSQLITE_ENABLE_FTS5 \
+                    -DSQLITE_ENABLE_GEOPOLY \
+                    -DSQLITE_ENABLE_JSON1 \
+                    -DSQLITE_ENABLE_OFFSET_SQL_FUNC \
+                    -DSQLITE_ENABLE_PREUPDATE_HOOK \
+                    -DSQLITE_ENABLE_RBU \
+                    -DSQLITE_ENABLE_RTREE \
+                    -DSQLITE_ENABLE_SESSION \
+                    -DSQLITE_ENABLE_STMTVTAB \
+                    -DSQLITE_ENABLE_UNLOCK_NOTIFY \
+                    -DSQLITE_ENABLE_UPDATE_DELETE_LIMIT \
+                    -DSQLITE_LIKE_DOESNT_MATCH_BLOBS \
+                    -DSQLITE_OMIT_DEPRECATED \
+                    -DSQLITE_SECURE_DELETE \
+                    -DSQLITE_SOUNDEX \
+                    -DSQLITE_USE_ALLOCA \
+                    -DSQLITE_USE_URI" ./configure \
      && make install \
      && cd \
      && git clone https://github.com/msteveb/jimtcl \
