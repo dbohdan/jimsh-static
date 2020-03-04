@@ -39,9 +39,9 @@ docker run \
     'cd \
      && apk update \
      && apk add gcc git make libc-dev openssl-dev tcl zlib-dev \
-     && wget https://sqlite.org/2019/sqlite-autoconf-3300100.tar.gz \
-     && tar xvf sqlite-autoconf-3300100.tar.gz \
-     && cd sqlite-autoconf-3300100/ \
+     && wget https://sqlite.org/2020/sqlite-autoconf-3310100.tar.gz \
+     && tar xvf sqlite-autoconf-3310100.tar.gz \
+     && cd sqlite-autoconf-3310100/ \
      && env CFLAGS="-DSQLITE_ENABLE_COLUMN_METADATA \
                     -DSQLITE_ENABLE_DBSTAT_VTAB \
                     -DSQLITE_ENABLE_EXPLAIN_COMMENTS \
