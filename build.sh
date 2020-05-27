@@ -69,7 +69,7 @@ docker run \
                     -DSQLITE_USE_URI" ./configure \
      && make install \
      && cd \
-     && git clone https://github.com/msteveb/jimtcl \
+     && git clone --depth 1 https://github.com/msteveb/jimtcl \
      && cd jimtcl/ \
      && git checkout "$1" \
      && ./configure --full --ipv6 --math --ssl --with-ext=sqlite3 \
