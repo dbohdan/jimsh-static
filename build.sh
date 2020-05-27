@@ -33,6 +33,7 @@ echo "target architecture is $arch"
 mkdir -p inbox/
 docker run \
     --rm \
+    --tty \
     --volume "$(pwd)/inbox:/inbox" \
     "$arch/alpine:3.10" \
     sh -c \
