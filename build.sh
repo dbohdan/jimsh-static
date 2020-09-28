@@ -35,7 +35,7 @@ docker run \
     --rm \
     --tty \
     --volume "$(pwd)/inbox:/inbox" \
-    "$arch/alpine:3.10" \
+    "$arch/alpine:3.12" \
     sh -c \
     'cd \
      && apk update \
@@ -73,7 +73,7 @@ docker run \
      && cd jimtcl/ \
      && git checkout "$1" \
      && ./configure --full --ipv6 --math --ssl --with-ext=sqlite3 \
-     && env LDLIBS=-static make \
+     && env LDFLAGS=-static make \
      && make test \
      && cp jimsh \
           "/inbox/jimsh-$(./jimsh --version)-$(git rev-parse HEAD \
