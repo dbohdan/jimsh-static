@@ -39,7 +39,15 @@ docker run \
     sh -c \
     'cd \
      && apk update \
-     && apk add gcc git make libc-dev openssl-dev tcl zlib-dev \
+     && apk add gcc \
+                git \
+                make \
+                libc-dev \
+                openssl-dev \
+                openssl-libs-static \
+                tcl \
+                zlib-dev \
+                zlib-static \
      && wget https://sqlite.org/2020/sqlite-autoconf-3330000.tar.gz \
      && tar xvf sqlite-autoconf-3330000.tar.gz \
      && cd sqlite-autoconf-3330000/ \
@@ -73,7 +81,8 @@ docker run \
      && cd jimtcl/ \
      && git checkout "$1" \
      && ./configure --full --ipv6 --math --ssl --with-ext=sqlite3 \
-     && env LDFLAGS=-static make \
+     && make "LDFLAGS=-no-pie -static" \
+             "LDLIBS=-Wl,-Bstatic -lz -lsqlite3 -lssl -lcrypto" \
      && make test \
      && cp jimsh \
           "/inbox/jimsh-$(./jimsh --version)-$(git rev-parse HEAD \
