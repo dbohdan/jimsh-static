@@ -41,6 +41,8 @@ docker run \
      && apk update \
      && apk add gcc \
                 git \
+                hiredis \
+                hiredis-dev \
                 make \
                 libc-dev \
                 openssl-dev \
@@ -80,9 +82,9 @@ docker run \
      && git clone https://github.com/msteveb/jimtcl \
      && cd jimtcl/ \
      && git checkout "$1" \
-     && ./configure --full --ipv6 --math --ssl --with-ext=sqlite3 \
+     && ./configure --full --ipv6 --math --ssl "--with-ext=redis sqlite3" \
      && make "LDFLAGS=-no-pie -static" \
-             "LDLIBS=-Wl,-Bstatic -lz -lsqlite3 -lssl -lcrypto" \
+             "LDLIBS=-Wl,-Bstatic -lz -lsqlite3 -lssl -lcrypto -lhiredis" \
      && make test \
      && cp jimsh \
           "/inbox/jimsh-$(./jimsh --version)-$(git rev-parse HEAD \
