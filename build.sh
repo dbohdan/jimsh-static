@@ -35,7 +35,7 @@ docker run \
     --rm \
     --tty \
     --volume "$(pwd)/inbox:/inbox" \
-    "$arch/alpine:3.12" \
+    "$arch/alpine:3.13" \
     sh -c \
     'cd \
      && apk update \
