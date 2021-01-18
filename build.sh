@@ -50,9 +50,9 @@ docker run \
                 tcl \
                 zlib-dev \
                 zlib-static \
-     && wget https://sqlite.org/2020/sqlite-autoconf-3330000.tar.gz \
-     && tar xvf sqlite-autoconf-3330000.tar.gz \
-     && cd sqlite-autoconf-3330000/ \
+     && wget https://sqlite.org/2020/sqlite-autoconf-3340000.tar.gz \
+     && tar xvf sqlite-autoconf-3340000.tar.gz \
+     && cd sqlite-autoconf-3340000/ \
      && env CFLAGS="-DSQLITE_ENABLE_COLUMN_METADATA \
                     -DSQLITE_ENABLE_DBSTAT_VTAB \
                     -DSQLITE_ENABLE_EXPLAIN_COMMENTS \
