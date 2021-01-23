@@ -4,7 +4,7 @@
 
 The shell script [`build.sh`](build.sh) builds a static Linux binary of [Jim Tcl](https://github.com/msteveb/jimtcl) using Docker.  You must select the target architecture by passing a command line argument to the script.  You can choose to build the latest commit (default) or any given commit, branch, or tag.  The build will include every extension enabled by the configure flag `--full` plus the SQLite 3 extension.  SQLite 3 will be built with its extensions [FTS5](https://www.sqlite.org/fts5.html) and [JSON1](https://www.sqlite.org/json1.html).
 
-The script has been successfully tested with tags `0.78` through `0.80` for `amd64`; tags `0.77` and earlier won't work.
+The script has been successfully tested with tags `0.78` through `0.80` for `amd64`; tag `0.77` and earlier won't work.  For `0.80` and earlier remove `redis` from the list of extensions.
 
 ## Prebuilt binaries
 
