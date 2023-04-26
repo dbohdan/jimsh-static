@@ -33,7 +33,7 @@ fi
 echo "target architecture is $arch"
 
 tag=jimsh-static:$revision-$arch
-printf 'building %s\n' "$tag"
+echo "building $tag"
 
 mkdir -p inbox/
 
@@ -52,4 +52,5 @@ docker run \
     'cd jimtcl \
      && cp jimsh \
            "/inbox/jimsh-$(./jimsh --version)-$(git rev-parse HEAD \
-                    | cut -c 1-10)-$0"' "$arch"
+                                                | cut -c 1-10)-$0"' \
+     "$arch"
