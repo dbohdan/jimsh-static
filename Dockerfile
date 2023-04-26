@@ -42,8 +42,8 @@ RUN cd sqlite-autoconf-3410200/ \
                    -DSQLITE_OMIT_DEPRECATED \
                    -DSQLITE_SECURE_DELETE \
                    -DSQLITE_SOUNDEX \
-                  -DSQLITE_USE_ALLOCA \
-                  -DSQLITE_USE_URI" ./configure \
+                   -DSQLITE_USE_ALLOCA \
+                   -DSQLITE_USE_URI" ./configure \
     && make install
 
 RUN git clone https://github.com/msteveb/jimtcl
