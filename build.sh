@@ -20,7 +20,6 @@ if [ "$#" -ne 1 ] && [ "$#" -ne 2 ]; then
     exit 1
 fi
 
-
 if [ -z "$arch" ]; then
     echo 'no target architecture' > /dev/stderr
     usage
@@ -53,4 +52,4 @@ docker run \
      && cp jimsh \
            "/inbox/jimsh-$(./jimsh --version)-$(git rev-parse HEAD \
                                                 | cut -c 1-10)-$0"' \
-     "$arch"
+    "$arch"
