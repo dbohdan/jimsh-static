@@ -8,7 +8,7 @@ The script has been successfully tested with tags `0.78` through `0.80` for `amd
 
 ## Prebuilt binaries
 
-Prebuilt binaries are available for `amd64`, `arm32v6`, and `i386`.  See the [releases](https://github.com/dbohdan/jimsh-static/releases) on GitHub.  Checksums of the prebuilt binaries can be found [in the repository](SHA256SUMS).
+Prebuilt binaries are available for `amd64` and `i386`, plus `arm32v6` for older releases.  See the [releases](https://github.com/dbohdan/jimsh-static/releases) on GitHub.  Checksums of the prebuilt binaries can be found [in the repository](SHA256SUMS).
 
 ## License
 
