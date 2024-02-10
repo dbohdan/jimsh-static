@@ -12,13 +12,13 @@ usage() {
     echo "usage: $(basename "$0") $archs [revision]" > /dev/stderr
 }
 
-
-arch="$1"
-revision="${2:-HEAD}"
 if [ "$#" -ne 1 ] && [ "$#" -ne 2 ]; then
     usage
     exit 1
 fi
+
+arch="$1"
+revision="${2:-HEAD}"
 
 if [ -z "$arch" ]; then
     echo 'no target architecture' > /dev/stderr
