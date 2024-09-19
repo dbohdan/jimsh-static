@@ -1,6 +1,6 @@
 ARG arch
 ARG revision
-FROM ${arch}/alpine:3.18
+FROM ${arch}/alpine:3.20
 
 RUN apk update
 RUN apk add gcc \
@@ -13,12 +13,13 @@ RUN apk add gcc \
             openssl-libs-static \
             tcl \
             zlib-dev \
-            zlib-static
+            zlib-static \
+            ;
 
-RUN wget https://sqlite.org/2023/sqlite-autoconf-3410200.tar.gz
-RUN tar xvf sqlite-autoconf-3410200.tar.gz
+RUN wget https://sqlite.org/2024/sqlite-autoconf-3460100.tar.gz
+RUN tar xvf sqlite-autoconf-3460100.tar.gz
 
-RUN cd sqlite-autoconf-3410200/ \
+RUN cd sqlite-autoconf-3460100/ \
     && env CFLAGS="-DSQLITE_ENABLE_COLUMN_METADATA \
                    -DSQLITE_ENABLE_DBSTAT_VTAB \
                    -DSQLITE_ENABLE_EXPLAIN_COMMENTS \
@@ -44,7 +45,8 @@ RUN cd sqlite-autoconf-3410200/ \
                    -DSQLITE_SOUNDEX \
                    -DSQLITE_USE_ALLOCA \
                    -DSQLITE_USE_URI" ./configure \
-    && make install
+    && make install \
+    ;
 
 RUN git clone https://github.com/msteveb/jimtcl
 
@@ -53,4 +55,5 @@ RUN cd jimtcl/ \
     && ./configure --full --ipv6 --math --ssl "--with-ext=redis sqlite3" \
     && make "LDFLAGS=-static" \
             "LDLIBS=-Wl,-Bstatic -lz -lsqlite3 -lssl -lcrypto -lhiredis" \
-    && make test || true
+    && make test || true \
+    ;
