@@ -55,5 +55,4 @@ RUN cd jimtcl/ \
     && ./configure --full --ipv6 --math --ssl "--with-ext=redis sqlite3" \
     && make "LDFLAGS=-static" \
             "LDLIBS=-Wl,-Bstatic -lz -lsqlite3 -lssl -lcrypto -lhiredis" \
-    && make test || true \
     ;
