@@ -9,7 +9,7 @@ cd "$(dirname "$0")"
 archs="(amd64|arm32v6|arm64v8|i386|ppc64le|s390x)"
 
 usage() {
-    echo "usage: $(basename "$0") $archs [revision]" > /dev/stderr
+    echo "usage: $(basename "$0") $archs [revision]" >&2
 }
 
 if [ "$#" -ne 1 ] && [ "$#" -ne 2 ]; then
@@ -21,11 +21,11 @@ arch="$1"
 revision="${2:-HEAD}"
 
 if [ -z "$arch" ]; then
-    echo 'no target architecture' > /dev/stderr
+    echo 'no target architecture' >&2
     usage
     exit 1
 elif ! echo "$arch" | grep -E -q "$archs"; then
-    echo "unknown architecture: \"$arch\"" > /dev/stderr
+    echo "unknown architecture: \"$arch\"" >&2
     usage
     exit 1
 fi
